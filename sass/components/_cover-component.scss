@@ -1,0 +1,21 @@
+body, html {
+}
+
+.cover-component {
+	&__img {
+		$path: '../images/cover.jpg';
+
+	  @include respond-to(small-mobile) {
+			@include cover-image($path, 100px);
+	  }
+	  @include respond-to(mobile) {
+			@include cover-image($path, 200px);
+	  }
+	  @include respond-to(tablet) {
+			@include cover-image($path, 200px);
+	  }
+	  @include respond-to(desktop) {
+			@include cover-image($path, 200px);
+	  }
+	}
+}
