@@ -13,9 +13,9 @@ Using
 -------------
 #### Clone
 Fork the following repository then run the following commands from your terminal
-https://github.com/kareem3d/frontend-task-1
+https://github.com/kareem3d/frontend-task-sass
 
-    git clone https://github.com/<your-username>/frontend-task-design <your-path>
+    git clone https://github.com/<your-username>/frontend-task-sass <your-path>
 
 #### Develop
 Run the following from your path
@@ -26,16 +26,17 @@ Run the following from your path
 Open index.html in your browser and start coding!
 
 #### Deploy
-After you finish the task push to your repository
+After you finish the task push to your repository then make a pull request
 		git add --all
 		git commit -m "<your-commit-message>"
 		git push origin master
 
 Considerations
 --------------
-1. Use mixins, variables, inheritance when they make sense.
-2. Put files in their corresponding folders.
-3. Use global variables to control theme.
+1. Use flexbox to make a responsive design.
+2. Use mixins, variables, inheritance when they make sense.
+3. Put files in their corresponding folders.
+4. Use global variables to control theme colors.
 
 The main goal is to organize your code so it can be easily customized later in the project lifetime and by any member of the team.
 
