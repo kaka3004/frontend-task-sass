@@ -1,6 +1,10 @@
 Frontend Task (1)
 ===================
 
+Task
+------
+Create a responsive layout for both mobile and desktop similar to the design in the final_layout folder.
+
 prerequisites
 -------------
 1. Git [Download](https://git-scm.com/download/win)
