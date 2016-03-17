@@ -45,6 +45,7 @@ The main goal is to organize your code so it can be easily customized later in t
 Resources
 -------------
 http://thesassway.com
+
 https://scotch.io/tutorials/aesthetic-sass-1-architecture-and-style-organization
 
    _____                 _   _                _    
