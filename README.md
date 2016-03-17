@@ -47,12 +47,3 @@ Resources
 http://thesassway.com
 
 https://scotch.io/tutorials/aesthetic-sass-1-architecture-and-style-organization
-
-   _____                 _   _                _    
-  / ____|               | | | |              | |   
- | |  __  ___   ___   __| | | |    _   _  ___| | __
- | | |_ |/ _ \ / _ \ / _` | | |   | | | |/ __| |/ /
- | |__| | (_) | (_) | (_| | | |___| |_| | (__|   < 
-  \_____|\___/ \___/ \__,_| |______\__,_|\___|_|\_\
-                                                   
-                                                   
