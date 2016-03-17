@@ -7,6 +7,7 @@ prerequisites
 2. Ruby [Download](http://rubyinstaller.org/)
 3. RubyGems [Download](https://rubygems.org/pages/download)
 4. Compass, install from your terminal
+
 		gem install compass
 
 Using
@@ -27,6 +28,7 @@ Open index.html in your browser and start coding!
 
 #### Deploy
 After you finish the task push to your repository then make a pull request
+
 		git add --all
 		git commit -m "<your-commit-message>"
 		git push origin master
