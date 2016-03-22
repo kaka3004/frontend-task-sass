@@ -17,8 +17,7 @@ prerequisites
 Using
 -------------
 #### Clone
-Fork the following repository then run the following commands from your terminal
-https://github.com/kareem3d/frontend-task-sass
+Fork this repository https://github.com/goodsensejp/frontend-task-sass then run the following commands from your terminal
 
     git clone https://github.com/<your-username>/frontend-task-sass <your-path>
 
