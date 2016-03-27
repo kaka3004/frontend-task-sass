@@ -1,0 +1,27 @@
+.container{
+  .footer{
+    .box{
+      h3{
+        text-align: center;
+        width: $grid-width - 5%;
+      }
+    }
+    input {
+      width: 250px;
+      border-style: solid;
+      border-color: $MainColor;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      color: $SecColor - 100;
+      font-size: 20px;
+      height: 50px;
+      padding: 5px;
+      margin-left: 25%;
+      background-color: $SecColor;
+      text-align: center;
+      @include placeholder-theme($ph-styles);
+      @include responding((display: block, margin: 0 auto,width: 80%),(display: block, margin: 0 auto,width: 80%),(display: block, margin: 0 auto,width: 80%));
+    }
+  }
+}

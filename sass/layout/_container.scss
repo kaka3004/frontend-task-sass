@@ -1,0 +1,8 @@
+.container{
+  h3{
+    @include responding((font-size: $head-size+5px),(font-size: $head-size+10px),(font-size: $head-size+15));
+  }
+  p{
+    @include responding((font-size: $p-size),(font-size: $p-size+5px),(font-size: $p-size+10px));
+  }
+}
