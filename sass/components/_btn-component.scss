@@ -1,0 +1,16 @@
+.btn{
+    text-decoration: none;
+    color: black;
+    border: 4px;
+    border-style: solid;
+    display: inline-block;
+    margin: 50px auto;
+    padding: 10px 15px 10px 15px;
+    text-align: center;
+    width: 100px;
+    &:hover{
+      background-color: black;
+      color: white;
+    }
+    @include responding((display: block),( display: block),( display: block));
+}

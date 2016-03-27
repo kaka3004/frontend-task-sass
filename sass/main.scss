@@ -5,76 +5,6 @@
 @import 'layout/module';
 @import 'components/module';
 @import 'pages/module';
-// @import "social/*.png";
-// @include all-social-sprites;
-
-
-$box-cover:350px;
-
-
-$pseudo-phprefix: "::-webkit-input-placeholder" "::-moz-placeholder" ":-ms-input-placeholder" "::placeholder";
-
-$ph-styles: (
-  font-family: sans-serif,
-  font-size: 16px,
-  font-style: bold,
-  font-weight: normal,
-  color: grey,
-  letter-spacing : normal,
-  line-height: 14px,
-  text-align: center,
-  text-decoration: none,
-  width:100px,
-  padding:-2px
-);
-
-@mixin placeholder-theme($styles) {
-  @each $pseudo in $pseudo-phprefix {
-
-    @at-root #{&}#{$pseudo} {
-      @each $key, $value in $styles {
-        #{$key}: #{$value};
-      }
-    }
-  }
-}
-
-@mixin responding($tabletStyle,$mobileStyle,$smallMobileStyle) {
-    @include respond-to(tablet){
-      @each $key,$value in $tabletStyle{
-        #{$key}: #{$value};
-      }
-    }
-    @include respond-to(mobile){
-      @each $key,$value in $mobileStyle{
-        #{$key}: #{$value};
-      }
-    }
-    @include respond-to(small-mobile){
-      @each $key,$value in $smallMobileStyle{
-        #{$key}: #{$value};
-      }
-    }
-}
-
-$icons:(facebook,twitter,instagram,youtube);
-@each $icon in $icons{
-  .#{$icon}{@include cover-image('../images/social/#{$icon}.png',20px);}
-}
-
-$boxes:(bagus: white,easy-returns: black,ski-club: white,year-warranty: black);
-@each $box,$color in $boxes{
-  .#{"box-"+$box}{
-     @extend .box;
-     @include cover-image('../images/#{$box}.jpg',$box-cover);
-     h3{
-       color: $color;
-     }
-     p{
-       color:$color;
-     }
-    }
-}
 
 h3{
   font-size: 40px;
@@ -82,7 +12,6 @@ h3{
   font-weight: 600;
   margin-bottom: 20px;
   @include responding((font-size: 45px),(font-size: 50px),(font-size: 55px));
-
 }
 
 p{
@@ -93,87 +22,4 @@ p{
 a{
   font-family: sans-serif;
   font-weight: bolder;
-}
-.container{
-  .header{
-    padding: 35px 25px 35px 25px;
-  }
-  .grid{
-    display: flex;
-    flex-flow: row wrap;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 100%;
-    &-col{
-      width: 49.5%;
-      @include responding((width: 100%),(width: 100%),(width: 100%));
-    }
-    .box{
-      flex-grow: 1;
-      margin-bottom: 10px;
-      width: 100%;
-      @include responding((height: $box-cover),(height: $box-cover),(height: $box-cover+115px));
-      h3{
-        width: 42%;
-        padding-left: 25px;
-        padding-top: 35px;
-      }
-      p{
-        width: 55%;
-        padding-left: 25px;
-      }
-    }
-  }
-  .footer{
-    .box{
-      h3{
-        text-align: center;
-        width: 95%;
-      }
-
-    }
-    input {
-      width: 250px;
-      border-style: solid;
-      border-color: black;
-      border-top: none;
-      border-left: none;
-      border-right: none;
-      color: grey;
-      font-size: 20px;
-      height: 50px;
-      padding: 5px;
-      margin-left: 25%;
-      margin-bottom: 25px;
-      @include placeholder-theme($ph-styles);
-      @include responding((display: block, margin: 0 auto),(display: block, margin: 0 auto),(display: block, margin: 0 auto));
-    }
-
-    .social {
-      margin-top: 10px;
-      display: table;;
-      margin:0 auto;
-      li{
-        display: inline-block;
-        margin: 0 auto;
-        height:  50px;
-        width: 50px;
-        background-color: black;
-        margin: 10px;
-      }
-    }
-  }
-}
-.btn{
-    text-decoration: none;
-    color: black;
-    border: 4px;
-    border-style: solid;
-    display: inline-block;
-    margin: 0 auto;
-    padding: 10px 15px 10px 15px;
-    text-align: center;
-    margin-top: 12px;
-    width: 100px;
-    @include responding((display: block),( display: block),( display: block));
 }

@@ -1,0 +1,17 @@
+
+
+$box-cover:350px;
+
+$boxes:(bagus: white,easy-returns: black,ski-club: white,year-warranty: black);
+@each $box,$color in $boxes{
+  .#{"box-"+$box}{
+     @extend .box;
+     @include cover-image('../images/#{$box}.jpg',$box-cover);
+     h3{
+       color: $color;
+     }
+     p{
+       color:$color;
+     }
+    }
+}

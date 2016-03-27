@@ -1,0 +1,26 @@
+$pseudo-phprefix: "::-webkit-input-placeholder" "::-moz-placeholder" ":-ms-input-placeholder" "::placeholder";
+
+$ph-styles: (
+  font-family: sans-serif,
+  font-size: 16px,
+  font-style: bold,
+  font-weight: normal,
+  color: grey,
+  letter-spacing : normal,
+  line-height: 14px,
+  text-align: center,
+  text-decoration: none,
+  width:100px,
+  padding:-2px
+);
+
+@mixin placeholder-theme($styles) {
+  @each $pseudo in $pseudo-phprefix {
+
+    @at-root #{&}#{$pseudo} {
+      @each $key, $value in $styles {
+        #{$key}: #{$value};
+      }
+    }
+  }
+}

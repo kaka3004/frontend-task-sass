@@ -1,0 +1,40 @@
+.container{
+  .header{
+    padding: 35px 25px 35px 25px;
+  }
+  .grid{
+    display: flex;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    &-col{
+      width: 49.5%;
+      @include responding((width: 100%),(width: 100%),(width: 100%));
+    }
+  }
+  .footer{
+    .box{
+      h3{
+        text-align: center;
+        width: 95%;
+      }
+    }
+    input {
+      width: 250px;
+      border-style: solid;
+      border-color: black;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      color: grey;
+      font-size: 20px;
+      height: 50px;
+      padding: 5px;
+      margin-left: 25%;
+      text-align: center;
+      @include placeholder-theme($ph-styles);
+      @include responding((display: block, margin: 0 auto,width: 80%),(display: block, margin: 0 auto,width: 80%),(display: block, margin: 0 auto,width: 80%));
+    }
+  }
+}

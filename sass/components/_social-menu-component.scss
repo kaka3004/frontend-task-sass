@@ -1,0 +1,17 @@
+.social {
+  margin-top: 10px;
+  display: table;;
+  margin:0 auto;
+  li{
+    display: inline-block;
+    margin: 0 auto;
+    background-color: black;
+    margin: 10px;
+    a{
+      height:  50px;
+      width: 50px;
+      display: inline-block;
+      text-indent: -1500px;
+    }
+  }
+}

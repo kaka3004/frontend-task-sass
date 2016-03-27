@@ -1,0 +1,4 @@
+$icons:(facebook,twitter,instagram,youtube);
+@each $icon in $icons{
+  .#{$icon}{@include cover-image('../images/social/#{$icon}.png',20px);}
+}

@@ -1,0 +1,15 @@
+.box{
+  flex-grow: 1;
+  margin-bottom: 10px;
+  width: 100%;
+  @include responding((height: $box-cover),(height: $box-cover),(height: $box-cover+115px));
+  h3{
+    width: 42%;
+    padding-left: 25px;
+    padding-top: 35px;
+  }
+  p{
+    width: 55%;
+    padding-left: 25px;
+  }
+}

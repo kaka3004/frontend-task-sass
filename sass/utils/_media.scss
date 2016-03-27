@@ -17,3 +17,21 @@ $desktop: 1100px;
     @media (min-width: $desktop) { @content; }
   }
 }
+
+@mixin responding($tabletStyle,$mobileStyle,$smallMobileStyle) {
+    @include respond-to(tablet){
+      @each $key,$value in $tabletStyle{
+        #{$key}: #{$value};
+      }
+    }
+    @include respond-to(mobile){
+      @each $key,$value in $mobileStyle{
+        #{$key}: #{$value};
+      }
+    }
+    @include respond-to(small-mobile){
+      @each $key,$value in $smallMobileStyle{
+        #{$key}: #{$value};
+      }
+    }
+}
