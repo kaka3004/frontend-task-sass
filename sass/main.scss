@@ -7,19 +7,20 @@
 @import 'pages/module';
 
 h3{
-  font-size: 40px;
-  font-family: sans-serif;
+  font-size: $head-size;
+  font-family: $main-font;
   font-weight: 600;
   margin-bottom: 20px;
-  @include responding((font-size: 45px),(font-size: 50px),(font-size: 55px));
+  color: $MainColor;
+  @include responding((font-size: $head-size+5px),(font-size: $head-size+10px),(font-size: $head-size+15));
 }
 
 p{
   margin-top: 5px;
-  font-family: sans-serif;
-  @include responding((font-size: 20px),(font-size: 25px),(font-size: 30px));
+  font-family: $main-font;
+  @include responding((font-size: $p-size),(font-size: $p-size+5px),(font-size: $p-size+10px));
 }
 a{
-  font-family: sans-serif;
+  font-family: $main-font;
   font-weight: bolder;
 }

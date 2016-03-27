@@ -1,16 +1,17 @@
 .btn{
     text-decoration: none;
-    color: black;
+    color: $MainColor;
     border: 4px;
     border-style: solid;
+    border-color: $MainColor;
     display: inline-block;
     margin: 50px auto;
     padding: 10px 15px 10px 15px;
     text-align: center;
     width: 100px;
     &:hover{
-      background-color: black;
-      color: white;
+      background-color: $MainColor;
+      color: $SecColor;
     }
     @include responding((display: block),( display: block),( display: block));
 }

@@ -1,8 +1,5 @@
 
-
-$box-cover:350px;
-
-$boxes:(bagus: white,easy-returns: black,ski-club: white,year-warranty: black);
+$boxes:(bagus: $SecColor,easy-returns: $MainColor,ski-club: $SecColor,year-warranty: $MainColor);
 @each $box,$color in $boxes{
   .#{"box-"+$box}{
      @extend .box;

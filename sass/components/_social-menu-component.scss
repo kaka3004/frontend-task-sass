@@ -5,7 +5,8 @@
   li{
     display: inline-block;
     margin: 0 auto;
-    background-color: black;
+    background-color: $MainColor;
+    color: $SecColor;
     margin: 10px;
     a{
       height:  50px;
