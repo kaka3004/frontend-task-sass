@@ -8,6 +8,10 @@
 // @import "social/*.png";
 // @include all-social-sprites;
 
+
+$box-cover:350px;
+
+
 $pseudo-phprefix: "::-webkit-input-placeholder" "::-moz-placeholder" ":-ms-input-placeholder" "::placeholder";
 
 $ph-styles: (
@@ -32,57 +36,64 @@ $ph-styles: (
         #{$key}: #{$value};
       }
     }
-
   }
 }
 
+@mixin responding($tabletStyle,$mobileStyle,$smallMobileStyle) {
+    @include respond-to(tablet){
+      @each $key,$value in $tabletStyle{
+        #{$key}: #{$value};
+      }
+    }
+    @include respond-to(mobile){
+      @each $key,$value in $mobileStyle{
+        #{$key}: #{$value};
+      }
+    }
+    @include respond-to(small-mobile){
+      @each $key,$value in $smallMobileStyle{
+        #{$key}: #{$value};
+      }
+    }
+}
 
+$icons:(facebook,twitter,instagram,youtube);
+@each $icon in $icons{
+  .#{$icon}{@include cover-image('../images/social/#{$icon}.png',20px);}
+}
 
-
-$return-img: '../images/easy-returns.jpg';
-$ski-img: "../images/ski-club.jpg";
-$year-img: "../images/year-warranty.jpg";
-$bagus-img: "../images/bagus.jpg";
-$facebook-ico:"../images/social/facebook.png";
-$youtube-ico:"../images/social/youtube.png";
-$twitter-ico:"../images/social/twitter.png";
-$instagram-ico:"../images/social/instagram.png";
-
+$boxes:(bagus: white,easy-returns: black,ski-club: white,year-warranty: black);
+@each $box,$color in $boxes{
+  .#{"box-"+$box}{
+     @extend .box;
+     @include cover-image('../images/#{$box}.jpg',$box-cover);
+     h3{
+       color: $color;
+     }
+     p{
+       color:$color;
+     }
+    }
+}
 
 h3{
   font-size: 40px;
   font-family: sans-serif;
   font-weight: 600;
   margin-bottom: 20px;
-  @include respond-to(mobile){
-    font-size: 50px;
-  }
-  @include respond-to(small-mobile){
-    font-size: 50px;
-  }
-  @include respond-to(tablet){
-    font-size: 50px;
-  }
+  @include responding((font-size: 45px),(font-size: 50px),(font-size: 55px));
+
 }
 
 p{
   margin-top: 5px;
   font-family: sans-serif;
-  @include respond-to(mobile){
-    font-size: 30px;
-  }
-  @include respond-to(small-mobile){
-    font-size: 30px;
-  }
-  @include respond-to(tablet){
-    font-size: 30px;
-  }
+  @include responding((font-size: 20px),(font-size: 25px),(font-size: 30px));
 }
 a{
   font-family: sans-serif;
   font-weight: bolder;
 }
-$box-cover:350px;
 .container{
   .header{
     padding: 35px 25px 35px 25px;
@@ -95,30 +106,13 @@ $box-cover:350px;
     max-width: 100%;
     &-col{
       width: 49.5%;
-      @include respond-to(mobile){
-          width: 100%;
-      }
-      @include respond-to(small-mobile){
-        width: 100%;
-      }
-      @include respond-to(tablet){
-        width: 100%;
-      }
+      @include responding((width: 100%),(width: 100%),(width: 100%));
     }
     .box{
       flex-grow: 1;
       margin-bottom: 10px;
       width: 100%;
-      // height: 300px;
-      @include respond-to(mobile){
-          height: $box-cover;
-      }
-      @include respond-to(small-mobile){
-        height: $box-cover;
-      }
-      @include respond-to(tablet){
-        height: $box-cover;
-      }
+      @include responding((height: $box-cover),(height: $box-cover),(height: $box-cover+115px));
       h3{
         width: 42%;
         padding-left: 25px;
@@ -128,38 +122,18 @@ $box-cover:350px;
         width: 55%;
         padding-left: 25px;
       }
-      &_1{
-
-        @include cover-image($return-img,$box-cover);
-      }
-      &_2{
-        @include cover-image($year-img,$box-cover);
-      }
-      &_3{
-        @include cover-image($ski-img,$box-cover);
-        color: white;
-      }
-      &_4{
-        @include cover-image($bagus-img,$box-cover);
-        color: white;
-
-      }
     }
   }
   .footer{
     .box{
-      display: inline-block;
-      margin-left:  25%;
-      width: 75%;
-      height: 200px;
       h3{
-        width: 80%;
-        margin-left: 40px;
+        text-align: center;
+        width: 95%;
       }
 
     }
     input {
-      width: 300px;
+      width: 250px;
       border-style: solid;
       border-color: black;
       border-top: none;
@@ -169,40 +143,23 @@ $box-cover:350px;
       font-size: 20px;
       height: 50px;
       padding: 5px;
+      margin-left: 25%;
       margin-bottom: 25px;
       @include placeholder-theme($ph-styles);
+      @include responding((display: block, margin: 0 auto),(display: block, margin: 0 auto),(display: block, margin: 0 auto));
     }
 
     .social {
       margin-top: 10px;
-      margin-left: 25px;
-      @include respond-to(mobile){
-          margin-left: 30px;
-      }
-      @include respond-to(small-mobile){
-        margin-left: 30px;
-      }
-      @include respond-to(tablet){
-        margin-left: 30px;
-      }
+      display: table;;
+      margin:0 auto;
       li{
         display: inline-block;
+        margin: 0 auto;
         height:  50px;
         width: 50px;
         background-color: black;
         margin: 10px;
-      }
-      &-facebook{
-        @include cover-image($facebook-ico,20px);
-      }
-      &-twitter{
-        @include cover-image($twitter-ico,20px);
-      }
-      &-youtube{
-        @include cover-image($youtube-ico,20px);
-      }
-      &-instagram{
-        @include cover-image($instagram-ico,20px);
       }
     }
   }
@@ -212,16 +169,11 @@ $box-cover:350px;
     color: black;
     border: 4px;
     border-style: solid;
+    display: inline-block;
+    margin: 0 auto;
     padding: 10px 15px 10px 15px;
-
-    @include respond-to(mobile){
-        margin-top: 90px;
-        margin-left: 90px;
-    }
-    @include respond-to(small-mobile){
-      margin-top: 90px;
-      margin-left: 90px;
-
-    }
-
+    text-align: center;
+    margin-top: 12px;
+    width: 100px;
+    @include responding((display: block),( display: block),( display: block));
 }
